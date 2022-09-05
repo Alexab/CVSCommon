@@ -168,7 +168,7 @@ struct CVSConfig : public CVSConfigBase {
     std::optional<Properties> to_ptree(const Self& config) const override {
       Properties result;
       if (!(config.*pointer)) {
-        return result;
+        return {};
       }
 
       if constexpr (std::is_same_v<Translator, void>) {
